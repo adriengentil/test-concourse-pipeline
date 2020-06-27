@@ -11,7 +11,7 @@ jobs:
     plan:
       - get: resource-test-pipeline
         trigger: true
-      - set_pipeline: self
+      - set_pipeline: test-pipeline
         file: resource-test-pipeline/pipeline.yml
       - task: hello
         config:
