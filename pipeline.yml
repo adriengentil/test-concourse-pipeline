@@ -3,7 +3,6 @@ resources:
   type: git
   source:
     uri: https://github.com/adriengentil/test-concourse-pipeline.git
-    branch: master
 
 jobs:
   - name: job-hello-world
