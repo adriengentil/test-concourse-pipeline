@@ -20,6 +20,8 @@ jobs:
           run:
             path: ls
             args: [-lrta]
+          inputs:
+            - name: resource-test-pipeline
       - set_pipeline: self
         file: test-concourse-pipeline/pipeline.yml
       - task: hello-world
