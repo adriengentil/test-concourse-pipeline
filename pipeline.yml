@@ -18,7 +18,9 @@ jobs:
             type: docker-image
             source: {repository: busybox}
           run:
-            path: pwd
+            path: find
+            args:
+              - "/"
       - set_pipeline: self
         file: test-concourse-pipeline/pipeline.yml
       - task: hello-world
