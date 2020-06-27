@@ -11,6 +11,14 @@ jobs:
     plan:
       - get: resource-test-pipeline
         trigger: true
+      - task: hello-world
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: {repository: busybox}
+          run:
+            path: tree
       - set_pipeline: self
         file: test-concourse-pipeline/pipeline.yml
       - task: hello-world
