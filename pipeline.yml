@@ -10,7 +10,8 @@ jobs:
     public: true
     plan:
       - get: resource-test-pipeline
-      - set_pipeline: test-pipeline
+        trigger: true
+      - set_pipeline: self
         file: test-concourse-pipeline/pipeline.yml
       - task: hello-world
         config:
