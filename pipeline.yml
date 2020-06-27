@@ -1,7 +1,17 @@
+resources:
+- name: resource-test-pipeline
+  type: git
+  source:
+    uri: https://github.com/adriengentil/test-concourse-pipeline.git
+    branch: master
+
 jobs:
   - name: job-hello-world
     public: true
     plan:
+      - get: resource-test-pipeline
+      - set_pipeline: test-pipeline
+        file: test-concourse-pipeline/pipeline.yml
       - task: hello-world
         config:
           platform: linux
